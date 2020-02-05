@@ -1,6 +1,6 @@
 html{
     box-sizing: border-box;
-    overflow:  hidden; 
+    /* overflow:  hidden;  */
 }
 body{
     font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
@@ -27,7 +27,6 @@ body{
     display:flex;
     flex-direction: row;
     flex-wrap:wrap;
-    min-width:445px;
     align-items:flex-start;
     justify-content:space-between;
     padding: 0;
@@ -43,13 +42,13 @@ body{
     background-color: white;
 }
 .left{
+    min-width: 445px;
     flex:2;
     margin:2%;
 }
 .right{
     flex:1;
     margin:2%;
-    padding-bottom: 1rem;
 }
 .item.select{
     border-top: 1px solid rgba(34,36,38,.15);
@@ -159,6 +158,9 @@ background-color:lightcoral;
     padding-bottom: 1rem;
 }
 .last-buttons{
+    /* display:flex;
+    flex-wrap:nowrap;
+    justify-content: center; */
     width: 37%!important;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -278,7 +280,7 @@ h3{
    }
    .stats-not-bought{
        display:flex;
-       flex-wrap:nowrap;
-       justify-content:center;
-       position:relative;
+       flex-wrap:wrap;
+       /* justify-content:center; */
+       /* position:relative; */
    }
