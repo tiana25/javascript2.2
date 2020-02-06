@@ -40,29 +40,38 @@ function ready(){
             var button = buyButtons[i];
             button.addEventListener('click', buyItem)
         }
-        // var titlesCollection = document.getElementsByClassName('title')
-        // for(var i = 0; i < titlesCollection.length; i++) {
-        //     var title = titlesCollection[i];
-        //     title.addEventListener('click', addName)
-        // }
+
+         var hiddenInputs = document.getElementsByClassName("hiddenNames")
+         for(var i = 0; i<hiddenInputs.length; i++){
+             var button = hiddenInputs[i];
+             button.addEventListener('focusout', changeName)
+         }
+        
+        var titlesCollection = document.getElementsByClassName('title')
+        for(var i = 0; i < titlesCollection.length; i++) {
+            var title = titlesCollection[i];
+            title.addEventListener('click', addName)
+        }
         
 }
-// function addName(event){
-//     var title = event.target
-//     title.style.display = 'none'
-//     document.getElementById('useid').type = 'text'
-// }
-// function createInputField(event){
-//     var title = event.target
-//     title.style.display = 'none'
-   
-//     var input = document.createElement("input");
-//     input.id = "newName"
-//     input.type = "text"; 
-//     input.setAttribute("value", title.innerText);
-//     title.parentElement.append(input)
-//     var itemName = input.value
-// }
+function addName(event){
+    var title = event.target
+    title.style.display = 'none'
+    var input = title.parentElement.getElementsByClassName('hiddenNames')[0]
+    input.type = 'text'
+    input.setAttribute("value", title.innerText);
+}
+function changeName(event){
+    var input = event.target
+    var newName = input.value
+    var title = input.parentElement.getElementsByClassName('title')[0]
+    title.style.display = "initial"
+    title.innerText = newName
+    input.type = 'hidden'
+    var hiddenInputs = input.parentElement.parentElement.parentElement.getElementsByClassName('hiddenNames')
+    var index = Array.from(hiddenInputs).indexOf(input)
+    document.getElementById(index).getElementsByClassName('buy','label')[0].innerText = newName
+}
 function buyItem(event){
     var button = event.target
     var index = Array.from(document.getElementsByClassName('last-buttons')).indexOf(button.parentElement.parentElement)
@@ -73,7 +82,6 @@ function buyItem(event){
     for (var i = 0; i< wrappings.length; i++){
         wrappings[i].style.display = 'none';
     }
-   // button.innerText = "Не куплено"
     var addAndDeleteButtons = button.parentElement.parentElement.parentElement.getElementsByClassName('group')[0]
     addAndDeleteButtons.getElementsByClassName('green')[0].style.display = 'none';
     addAndDeleteButtons.getElementsByClassName('minus')[0].style.display = 'none';
@@ -146,6 +154,7 @@ function addToCartByClick(event){
     var cartItems = document.getElementsByClassName('col left container')[0]
     var cartRowContents = `
     <div class="column items">
+    <input type = "hidden" class="hiddenNames" onfocusout="changeName">
     <span class="title">${inputItem}</span></div>
     <div class="buttons group">
         <div class="wrap"><button class="mini red minus button " data-tooltip="Менше">-</button></div>
