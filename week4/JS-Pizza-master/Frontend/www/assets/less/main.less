@@ -1,0 +1,191 @@
+@mainColor: orange;
+// @mainFont: font-family:'Roboto Light';
+@darkgr:#262626;
+@mygreen:rgb(5, 145, 5);
+@bckcolor:lighten(tan,20%);
+
+.btn-style{
+    background-color: @mainColor;
+    color:white;
+    border-color: darken(@mainColor,5%);
+}
+
+html, body{
+    background-color:@bckcolor;
+}
+.container-fluid{
+    position:relative;
+    background-color:@bckcolor;
+}
+.row{
+    background-color:@bckcolor;
+}
+#banner{
+    text-align: center;
+    background-color: grey;
+    position:fixed;
+    width:inherit;
+    max-width:inherit;
+    right:354px;
+    z-index:20;
+   
+}
+#menu{
+    text-align: center;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+.btn-circle{
+    font-weight:bold;
+    
+}
+
+#green{
+    background-color:@mygreen;
+    border:darken(@mygreen, 10%);
+}
+#delete{
+    background-color: white;
+    color:@mainColor;
+    border-color:lightgrey;
+    margin-left: 2rem;
+}
+
+h3 {
+    color: darken(@mainColor,5%);
+    font-weight: bold;
+  }
+
+
+.order-cart.thumbnail{
+    margin:0;
+}
+
+.crop{
+    // max-width: 70px;
+    max-width: 200px;
+    overflow: hidden; 
+    
+}
+.order-cart{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#crop_s{
+    max-height:100px;
+}
+#my_order{
+    font-size:1.5rem;
+    font-weight:bold;
+}
+#cart_ord{
+    padding-top:20px;
+    padding-bottom:20px;
+    margin:0;
+}
+.badge{
+    .btn-style;
+}
+
+#fill{
+    height:100%;
+}
+
+.ban{
+    // padding: @pad;
+background:rgba(0,0,0,0.75) ;
+span{
+    // font-size: @font;
+     color: grey;
+}
+}
+.line{
+    padding: 0.5px;
+    background-color: grey;
+}
+
+#pizza-list{
+    margin:50px;
+}
+#discount1{
+    position:fixed;
+    width:100px;
+    bottom:115px;
+    left:20px;
+}
+#cupon{
+    position:fixed;
+    width:100px;
+    height:120px;
+    background-color: rgb(230, 115, 0);
+    bottom:0px;
+    left:20px;
+    color:white;
+    font-size:1.5rem;
+    font-weight:bold;
+    text-align:center;
+#first{
+    padding-top:10px;
+}
+    p{
+        margin:0;
+        padding:0;
+    }
+}
+#kma{
+    position:fixed;
+    width:70px;
+    height:45px;
+    background-color: rgb(230, 115, 0);
+    top:0;
+    left:20px;
+    z-index:21;
+    color:white;
+    font-weight: bold;
+    text-align: center;
+
+    p{
+        margin:0;
+        
+    }
+}
+
+#discount2{
+    position:fixed;
+    top:36px;
+    left:20px;
+
+
+    img{
+        width:70px;
+        transform:rotate(180deg);
+    }
+}
+#buy{
+    .btn-style;
+    width:170px;;
+}
+#buy-pizza{
+    
+    margin-top:50%;
+    bottom:0;
+    text-align: center;
+    font:@darkgr;
+    font-weight: bold;
+}
+.col-md-3{
+    background-color: white;
+}
+@import "pizza/pizza-card";
+@import "top-bar";
+@import "menu";
