@@ -2,9 +2,20 @@
 // @mainFont: font-family:'Roboto Light';
 @darkgr:#262626;
 @mygreen:rgb(5, 145, 5);
-@bckcolor:lighten(tan,20%);
+@bckcolor:lighten(tan,25%);
+@cupon:rgb(234,134,46);
 
-.btn-style{
+
+
+#p_cart{
+    background-color: white;
+    .card{
+        background-color: rgb(244,244,244);
+    }
+}
+
+
+.btn-primary{
     background-color: @mainColor;
     color:white;
     border-color: darken(@mainColor,5%);
@@ -12,23 +23,37 @@
 
 html, body{
     background-color:@bckcolor;
+    overflow-x:hidden;
 }
 .container-fluid{
     position:relative;
     background-color:@bckcolor;
+    min-width: 600px;
 }
-.row{
-    background-color:@bckcolor;
+a{
+    color:@mainColor;
+
+}
+#pizza_kma{
+    color:white;
+    background-color:@cupon;
+    position:fixed;
+    width:100px;
 }
 #banner{
     text-align: center;
-    background-color: grey;
     position:fixed;
     width:inherit;
-    max-width:inherit;
-    right:354px;
+    max-width: inherit;
+    min-width:350px;
     z-index:20;
-   
+    background:rgba(0,0,0,0.75) ;
+}
+.f{
+    height:100px;
+    padding-top:30px;
+    width:inherit;
+    max-width:inherit;
 }
 #menu{
     text-align: center;
@@ -57,12 +82,10 @@ html, body{
     background-color: white;
     color:@mainColor;
     border-color:lightgrey;
-    margin-left: 2rem;
 }
 
-h3 {
+h3, h5 {
     color: darken(@mainColor,5%);
-    font-weight: bold;
   }
 
 
@@ -82,11 +105,29 @@ h3 {
     justify-content: space-around;
 }
 #crop_s{
-    max-height:100px;
+    width:80px;
+    height:80px;
+    padding-top:30px;
+    margin-left:60px;
+    overflow:hidden;
+    // float:right;
+    //  max-height:100px;
+    // width:100px;
+    // overflow:hidden;
+    // margin-left: 80px;
+    // margin-top:20px;
+}
+#cr_img{
+   width:50px;
+   height:100px;
+   overflow: hidden;
+}
+.right-order{
+    float:left;
+    width:210px;
 }
 #my_order{
-    font-size:1.5rem;
-    font-weight:bold;
+    font-weight:bold; font-size:1rem;
 }
 #cart_ord{
     padding-top:20px;
@@ -94,7 +135,7 @@ h3 {
     margin:0;
 }
 .badge{
-    .btn-style;
+    .btn-primary;
 }
 
 #fill{
@@ -102,16 +143,21 @@ h3 {
 }
 
 .ban{
-    // padding: @pad;
-background:rgba(0,0,0,0.75) ;
-span{
-    // font-size: @font;
+    padding-right:20px;
      color: grey;
-}
+     .btn{
+         float:right;
+     }
 }
 .line{
     padding: 0.5px;
     background-color: grey;
+}
+#h{
+    font-size:0.7rem;
+}
+#fr{
+    font-size:0.9rem;
 }
 
 #pizza-list{
@@ -127,12 +173,10 @@ span{
     position:fixed;
     width:100px;
     height:120px;
-    background-color: rgb(230, 115, 0);
+    background-color:@cupon;
     bottom:0px;
     left:20px;
     color:white;
-    font-size:1.5rem;
-    font-weight:bold;
     text-align:center;
 #first{
     padding-top:10px;
@@ -162,21 +206,25 @@ span{
 
 #discount2{
     position:fixed;
-    top:36px;
-    left:20px;
+    top:73px;
+    left:24px;
 
-
+z-index:20;
     img{
-        width:70px;
+        width:100px;
         transform:rotate(180deg);
     }
 }
 #buy{
-    .btn-style;
+    .btn-primary;
     width:170px;;
 }
 #buy-pizza{
-    
+    // position:fixed;
+    max-width:inherit;
+    width:inherit;
+    display: flex;
+    position: fixed;
     margin-top:50%;
     bottom:0;
     text-align: center;
@@ -186,6 +234,8 @@ span{
 .col-md-3{
     background-color: white;
 }
+
+
 @import "pizza/pizza-card";
 @import "top-bar";
 @import "menu";
