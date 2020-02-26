@@ -1,0 +1,61 @@
+<footer>
+    <div class="card f text-muted" align="center">
+     <p class="mb-0">Pizza.22 - практичний проект в межах курсу JavaScript в Києво-Могилянській академії</p>
+     <p class="mt-0">Доставка піци не здійснюється</p>
+     </div>
+ </footer>
+</div>
+<div class="col-5 col-sm-5 col-md-4 col-lg-3 p-3" id="p_cart">
+        
+    <div class="row" id="row_order">
+        <div class="col-12">
+            <div class="thumbnail" id="cart_ord">
+            <span id="my_order">Замовлення</span>
+            <a href="#"><span class="badge" id="p_count">5</span></a>
+            <% if (!editCart) {%>
+            <span id="clear_orders" style="color:grey;font-size:0.7rem;padding-left:20px; ">Очистити замовлення</span>
+            <% } %>
+        </div>
+        </div>
+    </div>        
+            <div class="card" id="buy-pizza">
+            <p> </p>
+            <% if (!editCart) {%>
+            <a href="#" class="btn btn-primary" id="buy">Замовити</a>
+            <% } else { %>
+                <a href="#" class="btn btn-primary" id="editOrder">Редагувати замовлення</a>
+            <% } %>
+            </div>
+        
+</div>
+</div>
+<div id="discount1">
+<img src="assets/images/discount.svg">
+</div>
+<div id="cupon">
+<p class="h6"id="first">
+Цього
+</p>
+<p class="h6">тижня</p>
+<p class="h6">на все</p>
+<p>.....................</p>
+<p class="h6">-20%</p>
+</div>
+
+
+<div id="discount2">
+<img src="assets/images/discount.svg">
+</div> 
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+<!--Own JavaScript -->
+<script type="text/javascript"  src="assets/js/main.js"> </script>
+</body>
+</html>

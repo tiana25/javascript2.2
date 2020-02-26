@@ -1,0 +1,241 @@
+@mainColor: orange;
+// @mainFont: font-family:'Roboto Light';
+@darkgr:#262626;
+@mygreen:rgb(5, 145, 5);
+@bckcolor:lighten(tan,25%);
+@cupon:rgb(234,134,46);
+
+
+
+#p_cart{
+    background-color: white;
+    .card{
+        background-color: rgb(244,244,244);
+    }
+}
+
+
+.btn-primary{
+    background-color: @mainColor;
+    color:white;
+    border-color: darken(@mainColor,5%);
+}
+
+html, body{
+    background-color:@bckcolor;
+    overflow-x:hidden;
+}
+.container-fluid{
+    position:relative;
+    background-color:@bckcolor;
+    min-width: 600px;
+}
+a{
+    color:@mainColor;
+
+}
+#pizza_kma{
+    color:white;
+    background-color:@cupon;
+    position:fixed;
+    width:100px;
+}
+#banner{
+    text-align: center;
+    position:fixed;
+    width:inherit;
+    max-width: inherit;
+    min-width:350px;
+    z-index:21;
+    background:rgba(0,0,0,0.75) ;
+}
+.f{
+    height:100px;
+    padding-top:30px;
+    width:inherit;
+    max-width:inherit;
+}
+#menu{
+    text-align: center;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+.btn-circle{
+    font-weight:bold;
+    
+}
+
+#green{
+    background-color:@mygreen;
+    border:darken(@mygreen, 10%);
+}
+#delete{
+    background-color: white;
+    color:@mainColor;
+    border-color:lightgrey;
+}
+
+h3, h5 {
+    color: darken(@mainColor,5%);
+  }
+
+
+.order-cart.thumbnail{
+    margin:0;
+}
+
+.crop{
+    // max-width: 70px;
+    max-width: 200px;
+    overflow: hidden; 
+    
+}
+.order-cart{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#crop_s{
+    width:80px;
+    height:80px;
+    padding-top:30px;
+    margin-left:60px;
+    overflow:hidden;
+    // float:right;
+    //  max-height:100px;
+    // width:100px;
+    // overflow:hidden;
+    // margin-left: 80px;
+    // margin-top:20px;
+}
+#cr_img{
+   width:50px;
+   height:100px;
+   overflow: hidden;
+}
+.right-order{
+    float:left;
+    width:210px;
+}
+#my_order{
+    font-weight:bold; font-size:1rem;
+}
+#cart_ord{
+    padding-top:20px;
+    padding-bottom:20px;
+    margin:0;
+}
+.badge{
+    .btn-primary;
+}
+
+#fill{
+    height:100%;
+}
+
+.ban{
+    padding-right:20px;
+     color: grey;
+     .btn{
+         float:right;
+     }
+}
+.line{
+    padding: 0.5px;
+    background-color: grey;
+}
+#h{
+    font-size:0.7rem;
+}
+#fr{
+    font-size:0.9rem;
+}
+
+#pizza-list{
+    margin:50px;
+}
+#discount1{
+    position:fixed;
+    width:100px;
+    bottom:115px;
+    left:20px;
+}
+#cupon{
+    position:fixed;
+    width:100px;
+    height:120px;
+    background-color:@cupon;
+    bottom:0px;
+    left:20px;
+    color:white;
+    text-align:center;
+#first{
+    padding-top:10px;
+}
+    p{
+        margin:0;
+        padding:0;
+    }
+}
+#kma{
+    position:fixed;
+    width:70px;
+    height:45px;
+    background-color: rgb(230, 115, 0);
+    top:0;
+    left:20px;
+    z-index:21;
+    color:white;
+    font-weight: bold;
+    text-align: center;
+
+    p{
+        margin:0;
+        
+    }
+}
+
+#discount2{
+    position:fixed;
+    top:73px;
+    left:24px;
+
+z-index:20;
+    img{
+        width:100px;
+        transform:rotate(180deg);
+    }
+}
+#buy{
+    .btn-primary;
+    width:170px;
+    margin:auto;
+}
+#buy-pizza{
+    max-width:inherit;
+    width:inherit;
+    position: fixed;
+    margin-top:50%;
+    bottom:0;
+    text-align: center;
+    font:@darkgr;
+    font-weight: bold;
+    z-index:20;
+}
+.col-md-3{
+    background-color: white;
+}
+
+
+@import "pizza/pizza-card";
+@import "top-bar";
+@import "menu";

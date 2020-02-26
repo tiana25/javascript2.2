@@ -1,0 +1,24 @@
+<% include common/header.ejs %>
+
+<div class="row" id="menu">
+    <div class="col-12">
+        <div id="select">
+            <p style="margin-top:30px;">
+                <span style="font-weight:bold; font-size:1.5rem;">Усі піци</span>
+                <a href="#"><span class="badge" id="all_p">5</span></a>
+            </p>
+            <div class="d-flex flex-row justify-content-center flex-wrap" id="pizza_m">
+                <button type="button" class="btn btn-primary" id="start">Усі</button>
+                <button type="button" class="btn btn-primary" id="meat" >Мясні</button>
+                <button type="button" class="btn btn-primary" id ="pine">З ананасами</button>
+                <button type="button" class="btn btn-primary"id="mush">З грибами</button>
+                <button type="button" class="btn btn-primary"id="sea">З морепродуктами</button>
+                <button type="button" class="btn btn-primary"id="veg">Вега</button>
+              </div>
+        </div>
+        
+    </div>
+</div>
+<div class="row" id="pizza-list"> </div>
+
+<% include common/footer.ejs %>
