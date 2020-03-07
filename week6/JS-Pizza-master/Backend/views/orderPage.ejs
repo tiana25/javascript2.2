@@ -1,5 +1,65 @@
-
 <% include common/header.ejs %>
-<div>LALALALALLALLA</div>
+
+<div class="container-fluid" id="dataform">
+    <div class="personal-data-holder">
+        <h1 ><small>1. Контактні дані</small></h1>
+    </div>
+    <div class="d-flex flex-row form-wrap">
+        <div class="form-gr">
+            <label class="font-weight-bold" for="name-input">
+                Ім'я:
+            </label>
+        </div>
+        <div class="f-wrap">
+            <input placeholder="Ім'я та прізвище" id="name-input">
+            <div class="warning"></div>
+        </div>
+    </div>
+    <div class="d-flex flex-row form-wrap">
+        <div class="form-gr">
+            <label class="font-weight-bold" for="phone-input">
+                Телефон:
+            </label>
+        </div>
+        <div class="f-wrap">
+            <input placeholder="Номер телефону" id="phone-input">
+            <div class="warning"></div>
+        </div>
+    </div>
+    <div class="d-flex flex-row form-wrap">
+        <div class="form-gr">
+            <label class="font-weight-bold" for="address-input">
+                Адреса:
+            </label>
+        </div>
+        <div class="f-wrap">
+            <input placeholder="Адреса" id="address-input">
+            <div class="warning"></div>
+        </div>
+    </div>
+    <div class="data-right">
+        <div>
+            <span class="delivery-info">
+                Інформація про замовлення
+            </span>
+            <br>
+            <span class="delivery-time">
+                <b>Приблизний час доставки:</b> невідомий
+            </span>
+            <br>
+            <span class="delivery-address">
+                <b>Адреса доставки:</b> невідома
+            </span>
+        </div>
+    </div>
+<div class="d-flex flex-row-reverse">
+    <button class="proceed-btn btn" id="order-proceed-btn">
+        Далі
+    </button>
+</div>
+</div>
+
+
+
 
 <% include common/footer.ejs %>

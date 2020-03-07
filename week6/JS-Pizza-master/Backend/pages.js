@@ -4,13 +4,13 @@
 exports.mainPage = function(req, res) {
     res.render('mainPage', {
         pageTitle: 'Вибір Піци',
-        editCart: false
+        editCart: true
     });
 
 };
 
 exports.orderPage = function(req, res) {
     res.render('orderPage', {
-        editCart: true
+        editCart: false
     });
 };

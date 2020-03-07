@@ -15,13 +15,17 @@
                 </div>
                 <div class="d-flex flex-row flex-nowrap pt-2 pb-2">
                     <span><strong><%= pizza[size].price %> грн.</strong></span>
+                    <% if (editable) { %> 
                     <button type="button" class="ml-2 mr-2 btn btn-danger btn-circle" id="red">-
                     </button>
+                    <% } %>
                     <span><strong><%= quantity %></strong></span>
+                    <% if (editable) { %>
                     <button type="button" class="ml-2 mr-2 btn btn-primary btn-circle" id="green">+
                     </button>
                     <button type="button" class="ml-2 btn btn-primary btn-circle" id="delete">x
                     </button> 
+                    <% } %>
                 </div>
             </div>
         

@@ -29,11 +29,13 @@ function addToCart(pizza, size) {
     Cart.push({
         pizza: pizza,
         size: size,
-        quantity: 1
+        quantity: 1,
+        editable: window.location.href.indexOf("order")>-1
     });
 
     //Оновити вміст кошика на сторінці
     updateCart();
+    
 }
 
 function removeFromCart(cart_item) {

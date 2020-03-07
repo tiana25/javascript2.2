@@ -1,0 +1,54 @@
+
+@orderTextColor: black;
+@ordertextsz: 20px;
+@orderinfo: white;
+@orderHeight: 145px;
+@primaryColor: orange;
+
+    .data-right {
+      margin-left:100px;
+      padding-left: 30px;
+      border: solid rgba(0, 0, 0, 0.1) 1px;
+      border-left: solid @primaryColor 6px;
+      background: @orderinfo;
+      width:460px;
+
+      div {
+        min-height: @orderHeight;
+        span {
+          display: inline-block;
+          margin: (@orderHeight - 3*@ordertextsz)/8-1px;
+          padding: 0;
+        }
+      }
+    }
+
+    .proceed-btn {
+      margin: 10px;
+      font-size: @ordertextsz;
+      background-color: @primaryColor;
+      color: @orderinfo;
+      border-radius: 5px;
+      outline: none;
+    }
+
+#dataform{
+  margin-top:15%;
+  .personal-data-holder{
+    margin-left:100px;
+  }
+  input{
+    width:200%;
+  }
+
+  label{
+    width:90px;
+    margin-left:100px;
+  }
+}
+.error{
+  label, input, .warning{
+    color: red;
+    border-color:red;
+  }  
+}

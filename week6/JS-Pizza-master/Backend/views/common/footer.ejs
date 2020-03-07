@@ -5,27 +5,32 @@
      </div>
  </footer>
 </div>
-<div class="col-5 col-sm-5 col-md-4 col-lg-3 p-3" id="p_cart">
+<div class="col-5 col-sm-5 col-md-4 col-lg-3 p-3" id="ord">
         
     <div class="row" id="row_order">
         <div class="col-12">
             <div class="thumbnail" id="cart_ord">
             <span id="my_order">Замовлення</span>
             <a href="#"><span class="badge" id="p_count">5</span></a>
-            <% if (!editCart) {%>
+            <% if (editCart) {%>
             <span id="clear_orders" style="color:grey;font-size:0.7rem;padding-left:20px; ">Очистити замовлення</span>
             <% } %>
         </div>
         </div>
     </div>        
-            <div class="card" id="buy-pizza">
-            <p> </p>
-            <% if (!editCart) {%>
-            <a href="#" class="btn btn-primary" id="buy">Замовити</a>
-            <% } else { %>
-                <a href="#" class="btn btn-primary" id="editOrder">Редагувати замовлення</a>
-            <% } %>
+           <div class="cart-list-wrap">
+            <div class="d-flex flex-column"id="p_cart">
+                        
             </div>
+        </div>
+            <div class="card" id="buy-pizza">
+                <p> </p>
+                <% if (editCart) {%>
+                <a href="#" class="btn btn-primary" id="buy">Купити</a>
+                <% } else { %>
+                    <a href="#" class="btn btn-primary" id="editOrder">Редагувати</a>
+                <% } %>
+                </div>
         
 </div>
 </div>
