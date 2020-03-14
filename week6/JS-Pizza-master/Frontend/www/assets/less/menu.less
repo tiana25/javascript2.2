@@ -1,32 +1,26 @@
-
 #menu{
     margin-top:7.4%;
+    text-align: center;
 }
+
 #select{
     .badge{
         .btn-primary
     }
-    // #start {
-    //     .btn-primary
-    // }
-    .btn{
-        color:@mainColor;
-        background-color: @bckcolor;
-        border:none;
+    .btn-group-toggle .active{
+            color: white;
+            background-color:@mainColor; 
+            z-index:0;   
     }
-    button:focus{
-        background-color: @mainColor;
-        color:white;
-        z-index:20;
+    .btn-group-toggle label {
+        color: @mainColor;
+        background-color: transparent;
+        border: none;
     }
+
     #all-pizzas{
         font-size:3rem;
         font-weight:bold;
     }
-    .disabled{
-        color:white;
-        background-color: white;
-    }
-    
 }
 

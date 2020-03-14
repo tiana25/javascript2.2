@@ -4,17 +4,31 @@
     <div class="col-12">
         <div id="select">
             <p style="margin-top:30px;">
-                <span style="font-weight:bold; font-size:1.5rem;">Усі піци</span>
+                <span style="font-weight:bold; font-size:1.5rem;" id="filterName">Усі піци</span>
                 <a href="#"><span class="badge" id="all_p">5</span></a>
             </p>
-            <div class="d-flex flex-row justify-content-center flex-wrap" id="pizza_m">
-                <button type="button" class="btn btn-primary" id="start">Усі</button>
-                <button type="button" class="btn btn-primary" id="meat" >Мясні</button>
-                <button type="button" class="btn btn-primary" id ="pine">З ананасами</button>
-                <button type="button" class="btn btn-primary"id="mush">З грибами</button>
-                <button type="button" class="btn btn-primary"id="sea">З морепродуктами</button>
-                <button type="button" class="btn btn-primary"id="veg">Вега</button>
-              </div>
+            <div class="d-flex flex-row justify-content-center" id="pizza_m">
+                <div class="btn-group btn-group-toggle flex-wrap" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                      <input type="radio" name="options" id="start" autocomplete="off" checked> Усі
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="options" id="meat" autocomplete="off"> М'ясні
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="options" id="pine" autocomplete="off"> З ананасами
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="mush" autocomplete="off"> З грибами
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="sea" autocomplete="off"> З морепродуктами
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="veg" autocomplete="off"> Вега
+                      </label>
+                  </div>
+            </div>
         </div>
         
     </div>
