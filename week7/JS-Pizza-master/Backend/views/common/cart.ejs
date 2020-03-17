@@ -1,0 +1,57 @@
+<footer>
+    <div class="card f text-muted" align="center">
+     <p class="mb-0">Pizza.22 - практичний проект в межах курсу JavaScript в Києво-Могилянській академії</p>
+     <p class="mt-0">Доставка піци не здійснюється</p>
+     </div>
+ </footer>
+</div>
+<div class="col-6 col-sm-5 col-md-4 col-lg-3 p-0" id="ord">
+        
+    <div class="row" id="row_order">
+        <div class="col-12">
+            <div class="thumbnail pl-3 pt-4 m-0" id="cart_ord">
+            <span id="my_order">Замовлення</span>
+            <a href="#"><span class="badge" id="p_count">5</span></a>
+            <% if (editCart) {%>
+            <span id="clear_orders" style="color:grey;font-size:0.7rem;padding-left:20px; ">Очистити замовлення</span>
+            <% } %>
+        </div>
+        </div>
+    </div>        
+           <div class="cart-list-wrap">
+            <div id="p_cart">
+                        
+            </div>
+        </div>
+            <div class="card" id="buy-pizza">
+                <p class="pt-4">Сумма замовлення: </p>
+                <span class="m-0 p-0" id="totsum"> </span>
+                <p class="pt-4"> грн</p>
+                <% if (editCart) {%>
+                <a href="#" class="btn btn-primary" id="buy">Купити</a>
+                <% } else { %>
+                    <a href="#" class="btn btn-primary" id="editOrder">Редагувати</a>
+                <% } %>
+                </div>
+        
+</div>
+</div>
+<div id="discount1">
+<img src="assets/images/discount.svg">
+</div>
+<div id="cupon">
+<p class="h6"id="first">
+Цього
+</p>
+<p class="h6">тижня</p>
+<p class="h6">на все</p>
+<p>.....................</p>
+<p class="h6">-20%</p>
+</div>
+
+
+<div id="discount2">
+<img src="assets/images/discount.svg">
+</div> 
+
+</div>

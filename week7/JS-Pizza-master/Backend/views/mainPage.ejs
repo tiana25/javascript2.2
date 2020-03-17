@@ -1,0 +1,40 @@
+<% include common/header.ejs %>
+
+<div class="row" id="menu">
+    <div class="col-12">
+        <div id="select">
+            <p style="margin-top:30px;">
+                <span style="font-weight:bold; font-size:1.5rem;" id="filterName">Усі піци</span>
+                <a href="#"><span class="badge" id="all_p">5</span></a>
+            </p>
+            <div class="d-flex flex-row justify-content-center" id="pizza_m">
+                <div class="btn-group btn-group-toggle flex-wrap" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                      <input type="radio" name="options" id="start" autocomplete="off" checked> Усі
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="options" id="meat" autocomplete="off"> М'ясні
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="options" id="pine" autocomplete="off"> З ананасами
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="mush" autocomplete="off"> З грибами
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="sea" autocomplete="off"> З морепродуктами
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="veg" autocomplete="off"> Вега
+                      </label>
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<div class="row" id="pizza-list"> </div>
+
+
+<% include common/cart.ejs %>
+<% include common/footer.ejs %>

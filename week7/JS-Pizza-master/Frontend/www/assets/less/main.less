@@ -1,0 +1,66 @@
+@mainColor: orange;
+@darkgr:#262626;
+@mygreen:rgb(5, 145, 5);
+@bckcolor:lighten(tan,25%);
+@cupon:rgb(234,134,46);
+@pizzaKMA: rgb(230, 115, 0);
+@orderCartColor:rgb(244,244,244);
+@newLabelColor: rgb(255, 77, 77);
+@popularLabelColor:rgb(92, 214, 92);
+@bannerHeight:80px;
+@shadowColor:rgb(175, 173, 173);
+
+
+
+
+.btn-primary {
+    background-color: @mainColor;
+    color:white;
+    border-color: darken(@mainColor,5%);
+}
+
+#firstCol{
+    .btn-primary{
+        background-color: @mainColor!important;
+        border-color: darken(@mainColor,5%)!important;
+    }
+}
+html, body {
+    background-color:@bckcolor;
+    overflow-x:hidden;
+}
+
+.container-fluid {
+    position:relative;
+    background-color:@bckcolor;
+    min-width: 600px;
+}
+
+a {
+    color:@mainColor;
+}
+.btn-primary :hover{
+    color:@mainColor;
+}
+.f {
+    height:100px;
+    padding-top:30px;
+    width:inherit;
+    max-width:inherit;
+}
+h3, h5 {
+    color: darken(@mainColor,5%);
+}
+.badge {
+    .btn-primary;
+}
+.col-md-3 {
+    background-color: white;
+}
+
+@import "pizza/pizza-card";
+@import "order/order.less";
+@import "top-bar";
+@import "menu";
+@import "cart";
+@import "badges";

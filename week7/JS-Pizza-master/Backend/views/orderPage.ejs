@@ -1,0 +1,81 @@
+<% include common/header.ejs %>
+
+<div class="container-fluid" id="dataform">
+    <div class="personal-data-holder">
+        <h1 ><small>1. Контактні дані</small></h1>
+    </div>
+    <div class="d-flex flex-row form-wrap">
+        <div class="form-gr">
+            <label class="font-weight-bold" for="name-input">
+                Ім'я:
+            </label>
+        </div>
+        <div class="f-wrap">
+            <input placeholder="Ім'я та прізвище" id="name-input">
+            <div class="warning"></div>
+        </div>
+    </div>
+    <div class="d-flex flex-row form-wrap">
+        <div class="form-gr">
+            <label class="font-weight-bold" for="phone-input">
+                Телефон:
+            </label>
+        </div>
+        <div class="f-wrap">
+            <input placeholder="Номер телефону" id="phone-input">
+            <div class="warning"></div>
+        </div>
+    </div>
+    <div class="d-flex flex-row form-wrap">
+        <div class="form-gr">
+            <label class="font-weight-bold" for="address-input">
+                Адреса:
+            </label>
+        </div>
+        <div class="f-wrap">
+            <input placeholder="Адреса" id="address-input">
+            <div class="warning"></div>
+        </div>
+    </div>
+    <div class="data-right">
+        <div>
+            <span class="delivery-info mt-3 mb-0">
+               <i> Інформація про замовлення</i>
+            </span>
+            <br>
+            <span class="delivery-time mb-0">
+                <b>Приблизний час доставки:</b> 
+               <span class="m-0">невідомий</span>
+            </span>
+            <br>
+            <span class="delivery-address mt-0">
+                <b>Адреса доставки:</b> 
+                <span class="m-0">невідома</span>
+            </span>
+        </div>
+    </div>
+<div class="d-flex flex-row-reverse">
+    <button class="proceed-btn btn" id="order-proceed-btn">
+        Далі
+    </button>
+</div>
+
+<div id="googleMap">
+    Map
+</div>
+
+<div id="liqpay" class="privat-bank-widget">
+
+</div>
+
+</div>
+
+
+
+<% include common/cart.ejs %>
+
+<script	type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCORebpKXAVBF8-1c5uEAmeEOJhKWB_gag"></script>
+<script src="assets/js/map.js"></script>
+<script src="assets/js/LiqPay.js"></script>
+
+<% include common/footer.ejs %>

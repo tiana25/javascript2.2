@@ -1,0 +1,41 @@
+
+
+
+<div class="card">
+    <div class="d-flex flex-row flex-nowrap">
+        
+            <div class="d-flex flex-column pl-3 pt-1">
+                <h5><%= pizza.title %></h5>
+                <div id="diamtr">
+                    <img id="p_size" src="assets/images/size-icon.svg">
+                    <span><%= pizza[size].size %></span>
+                       <img id="p_size" src="assets/images/weight.svg">
+                       <span><%= pizza[size].weight %></span>
+                   
+                </div>
+                <div class="d-flex flex-row flex-nowrap pt-2 pb-2">
+                    <span><strong><%= pizza[size].price %> грн.</strong></span>
+                    <% if (editable) { %> 
+                    <button type="button" class="ml-2 mr-2 btn btn-danger btn-circle" id="red">-
+                    </button>
+                    <% } %>
+                    <span><strong><%= quantity %></strong></span>
+                    <% if (editable) { %>
+                    <button type="button" class="ml-2 mr-2 btn btn-primary btn-circle" id="green">+
+                    </button>
+                    <button type="button" class="ml-2 btn btn-primary btn-circle" id="delete">x
+                    </button> 
+                    <% } %>
+                </div>
+            </div>
+        
+        <div class="d-flex ml-auto">
+            <div id="cr_img">
+                <img style="width:100px;height:100px;" src="<%= pizza.icon %>">
+            </div>
+            
+            </div>   
+        </div>
+</div>
+
+
