@@ -1,3 +1,24 @@
+function readInfo(){
+    var nameInput = $("#name-input").val();
+    var phoneInput = $("#phone-input").val();
+    var liqPay = require('./LiqPay');
+
+    var valid = !($(".f-wrap").hasClass("error"))&&nameInput!=null&&nameInput!=""&&phoneInput!=null&&phoneInput!="";
+
+    if(valid){
+        if( $(".delivery-time span").text() != "невідомий") {
+          liqPay.initLiqPay();  
+        }
+        else{
+            alert("Вкажіть правильну адресу!");
+        }
+    }
+    else {
+        alert("Будь ласка, заповніть всі необхідні поля!");
+    }
+}
+
+
 $(function(){
 
     var $proceedBtn = $("#order-proceed-btn");
@@ -34,9 +55,8 @@ checkInput($phoneInput, "Введіть номер телефону у форм�
     /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
 
 
-    var liqPay = require('./LiqPay');
+    $proceedBtn.click(readInfo);
 
-    $proceedBtn.click(function () {
-        liqPay.initLiqPay();
-    });
+
+    
 });

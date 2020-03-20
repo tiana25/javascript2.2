@@ -1,6 +1,6 @@
 function initLiqPay() {
-    var $quant = $("totsum");
-    var sum = parseInt(quant.text);
+    var sum = require('../pizza/PizzaCart').getPizzaSum();
+    console.log(sum);
     var pizzas_in_order = "";
 
     require('../pizza/PizzaCart').getPizzaInCart().forEach(function (t) {
@@ -11,7 +11,7 @@ function initLiqPay() {
     var order_info = {
         amount: sum,
         description: 'Замовлення піци: ' + $('#name-input').val() + '\n' +
-        'Адреса доставки: ' + $("#address-input").val() + '\n' +
+        'Адреса доставки: ' + $("address-input").val() + '\n' +
         'Телефон: ' + $('#phone-input').val() + '\n' +
         pizzas_in_order +
         '\nРазом ' + sum + 'грн'

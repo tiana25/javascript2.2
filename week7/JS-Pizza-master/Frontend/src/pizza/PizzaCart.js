@@ -100,6 +100,14 @@ function getPizzaInCart() {
     return Cart;
 }
 
+function getPizzaSum(){
+    var totalSum = 0;
+    for(var i=0;i<Cart.length;i++){
+      totalSum+=Cart[i].quantity * Cart[i].pizza[Cart[i].size].price;  
+    }
+    return totalSum;
+}
+
 function updateCart() {
     $cart.html("");
 
@@ -128,11 +136,8 @@ function updateCart() {
     }
     Cart.forEach(showOnePizzaInCart);
     $("#p_count").text(Cart.length);
-    var totalSum = 0;
-    for(var i=0;i<Cart.length;i++){
-      totalSum+=Cart[i].quantity * Cart[i].pizza[Cart[i].size].price;  
-    }
-    $("#buy-pizza span").text(totalSum);
+    var totalSum = getPizzaSum();
+    $("#buy-pizza p").text("Сума замовлення: "+totalSum+" грн");
     $("#clear_orders").click(function(){
       for(var i = 0; i<Cart.length;)
       removeFromCart(Cart[i]);
@@ -147,3 +152,4 @@ exports.getPizzaInCart = getPizzaInCart;
 exports.initialiseCart = initialiseCart;
 
 exports.PizzaSize = PizzaSize;
+exports.getPizzaSum = getPizzaSum;

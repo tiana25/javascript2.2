@@ -72,8 +72,8 @@ $(function(){
 });
 },{"./API":1,"./order/Order":5,"./pizza/PizzaCart":6,"./pizza/PizzaMenu":7}],4:[function(require,module,exports){
 function initLiqPay() {
-    var $quant = $("totsum");
-    var sum = parseInt(quant.text);
+    var sum = require('../pizza/PizzaCart').getPizzaSum();
+    console.log(sum);
     var pizzas_in_order = "";
 
     require('../pizza/PizzaCart').getPizzaInCart().forEach(function (t) {
@@ -84,7 +84,7 @@ function initLiqPay() {
     var order_info = {
         amount: sum,
         description: 'Замовлення піци: ' + $('#name-input').val() + '\n' +
-        'Адреса доставки: ' + $("#address-input").val() + '\n' +
+        'Адреса доставки: ' + $("address-input").val() + '\n' +
         'Телефон: ' + $('#phone-input').val() + '\n' +
         pizzas_in_order +
         '\nРазом ' + sum + 'грн'
@@ -110,6 +110,27 @@ function initLiqPay() {
 
 exports.initLiqPay = initLiqPay;
 },{"../API.js":1,"../pizza/PizzaCart":6}],5:[function(require,module,exports){
+function readInfo(){
+    var nameInput = $("#name-input").val();
+    var phoneInput = $("#phone-input").val();
+    var liqPay = require('./LiqPay');
+
+    var valid = !($(".f-wrap").hasClass("error"))&&nameInput!=null&&nameInput!=""&&phoneInput!=null&&phoneInput!="";
+
+    if(valid){
+        if( $(".delivery-time span").text() != "невідомий") {
+          liqPay.initLiqPay();  
+        }
+        else{
+            alert("Вкажіть правильну адресу!");
+        }
+    }
+    else {
+        alert("Будь ласка, заповніть всі необхідні поля!");
+    }
+}
+
+
 $(function(){
 
     var $proceedBtn = $("#order-proceed-btn");
@@ -146,11 +167,10 @@ checkInput($phoneInput, "Введіть номер телефону у форм�
     /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
 
 
-    var liqPay = require('./LiqPay');
+    $proceedBtn.click(readInfo);
 
-    $proceedBtn.click(function () {
-        liqPay.initLiqPay();
-    });
+
+    
 });
 },{"./LiqPay":4}],6:[function(require,module,exports){
 /**
@@ -255,6 +275,14 @@ function getPizzaInCart() {
     return Cart;
 }
 
+function getPizzaSum(){
+    var totalSum = 0;
+    for(var i=0;i<Cart.length;i++){
+      totalSum+=Cart[i].quantity * Cart[i].pizza[Cart[i].size].price;  
+    }
+    return totalSum;
+}
+
 function updateCart() {
     $cart.html("");
 
@@ -283,11 +311,8 @@ function updateCart() {
     }
     Cart.forEach(showOnePizzaInCart);
     $("#p_count").text(Cart.length);
-    var totalSum = 0;
-    for(var i=0;i<Cart.length;i++){
-      totalSum+=Cart[i].quantity * Cart[i].pizza[Cart[i].size].price;  
-    }
-    $("#buy-pizza span").text(totalSum);
+    var totalSum = getPizzaSum();
+    $("#buy-pizza p").text("Сума замовлення: "+totalSum+" грн");
     $("#clear_orders").click(function(){
       for(var i = 0; i<Cart.length;)
       removeFromCart(Cart[i]);
@@ -302,6 +327,7 @@ exports.getPizzaInCart = getPizzaInCart;
 exports.initialiseCart = initialiseCart;
 
 exports.PizzaSize = PizzaSize;
+exports.getPizzaSum = getPizzaSum;
 
 },{"../Templates":2}],7:[function(require,module,exports){
 /**

@@ -115,8 +115,6 @@ function initialize() {
         // $input.keypress(test);
         // $input.on("input", test);
 
-
-        $("#order-proceed-btn").initLiqPay();
 }
 
 //Коли сторінка завантажилась
