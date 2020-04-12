@@ -2,6 +2,9 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *">
     <title>Pizza</title>
 
     <!-- Bootsrap CSS -->
@@ -10,6 +13,7 @@
     <link rel="stylesheet/less" type="text/css" href="assets/less/main.less" />
     <!-- LESS JavaScript компілятор -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+    <script src="//static.liqpay.ua/libjs/checkout.js" async></script>
 </head>
 <body>
 

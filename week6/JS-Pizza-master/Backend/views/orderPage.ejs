@@ -1,7 +1,7 @@
 <% include common/header.ejs %>
 
-<div class="container-fluid" id="dataform">
-    <div class="personal-data-holder">
+<div class="container-fluid col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4 p-2" id="dataform">
+    <div class="personal-data-holder ">
         <h1 ><small>1. Контактні дані</small></h1>
     </div>
     <div class="d-flex flex-row form-wrap">
@@ -39,16 +39,18 @@
     </div>
     <div class="data-right">
         <div>
-            <span class="delivery-info">
-                Інформація про замовлення
+            <span class="delivery-info mt-3 mb-0">
+               <i> Інформація про замовлення</i>
             </span>
             <br>
-            <span class="delivery-time">
-                <b>Приблизний час доставки:</b> невідомий
+            <span class="delivery-time mb-0">
+                <b>Приблизний час доставки:</b> 
+               <span class="m-0">невідомий</span>
             </span>
             <br>
-            <span class="delivery-address">
-                <b>Адреса доставки:</b> невідома
+            <span class="delivery-address mt-0">
+                <b>Адреса доставки:</b> 
+                <span class="m-0">невідома</span>
             </span>
         </div>
     </div>
@@ -57,9 +59,22 @@
         Далі
     </button>
 </div>
+
+<div class = "" id="googleMap">
+    Map
+</div>
+
+<div id="liqpay" class="privat-bank-widget">
+
+</div>
+
 </div>
 
 
 
+<% include common/cart.ejs %>
+
+<script	type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCORebpKXAVBF8-1c5uEAmeEOJhKWB_gag"></script>
+<script src="assets/js/map.js"></script>
 
 <% include common/footer.ejs %>
