@@ -11,7 +11,7 @@ function initLiqPay() {
     var order_info = {
         amount: sum,
         description: 'Замовлення піци: ' + $('#name-input').val() + '\n' +
-        'Адреса доставки: ' + $("address-input").val() + '\n' +
+        'Адреса доставки: ' + $("#address-input").val() + '\n' +
         'Телефон: ' + $('#phone-input').val() + '\n' +
         pizzas_in_order +
         '\nРазом ' + sum + 'грн'
