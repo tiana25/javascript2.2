@@ -146,10 +146,8 @@ function checkInput($input, warnMessage, re) {
         if (!passes) {
             if (str.length !== 0)
                 $prnt.addClass("error");
-                // $prnt.removeClass("good");
         } else {
             if (str.length !== 0)
-                // $prnt.addClass("good");
                 $prnt.removeClass("error");
         }
         $warn.html(passes ? "" : warnMessage);
@@ -161,8 +159,8 @@ function checkInput($input, warnMessage, re) {
 }
 var $nameInput = $("#name-input");
 var $phoneInput = $("#phone-input");
-checkInput($nameInput, "Введіть тільки власне ім'я, без цифр!",
-    /^[a-z а-яА-Я,.'-]+$/i);
+checkInput($nameInput, "Введіть тільки власне ім'я, без цифр і символів!",
+/^[A-Za-zА-Яа-яІіЇїЄєҐґ'/ -]+$/);
 checkInput($phoneInput, "Введіть номер у форматі +380!",
 /^\+?3?8?(0[5-9][0-9]\d{7})$/);
 
