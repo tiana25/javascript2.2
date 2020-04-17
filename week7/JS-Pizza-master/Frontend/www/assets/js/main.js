@@ -163,14 +163,11 @@ var $nameInput = $("#name-input");
 var $phoneInput = $("#phone-input");
 checkInput($nameInput, "Введіть тільки власне ім'я, без цифр!",
     /^[a-z а-яА-Я,.'-]+$/i);
-checkInput($phoneInput, "Введіть номер телефону у форматі +380!",
-    /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
-
+checkInput($phoneInput, "Введіть номер у форматі +380!",
+/^\+?3?8?(0[5-9][0-9]\d{7})$/);
 
     $proceedBtn.click(readInfo);
-
-
-    
+ 
 });
 },{"./LiqPay":4}],6:[function(require,module,exports){
 /**
