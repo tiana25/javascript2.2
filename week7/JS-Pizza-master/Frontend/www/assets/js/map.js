@@ -16,7 +16,8 @@ function initialize() {
         map: map,
         icon: "assets/images/map-icon.png"
     });
-
+    var homeSet = false;
+    var marker2;
     function geocodeLatLng(latlng, callback) {
         //Модуль за роботу з адресою
         var geocoder = new google.maps.Geocoder();
@@ -26,6 +27,14 @@ function initialize() {
             if (status === google.maps.GeocoderStatus.OK && results[1]) {
                 var adress = results[1].formatted_address;
                 callback(null, adress);
+                if(homeSet) marker2.setMap(null);
+                var point2 = latlng;
+                marker2 = new google.maps.Marker({
+                position: point2,
+                map: map,
+                icon: "assets/images/home-icon.png"
+    });
+    homeSet = true;
             } else {
                 callback(new Error("Не можливо визначити адресу"));
             }
@@ -69,6 +78,7 @@ function initialize() {
                     console.log(adress);
                     $("#address-input").val(adress);
                     $(".delivery-address span").text(adress);
+                   
                 } else {
                     console.log("Немає адреси");
                 }
@@ -83,39 +93,35 @@ function initialize() {
             });
         });
 
-            
+        function findAdress(){
+                geocodeAddress($input.val(), function (err, data) {
+                    if (!err) {
+                        geocodeLatLng(data, function (err, adress) {
+                            if (!err) {
+                                console.log(adress);
+                                $(".delivery-address span").text(adress);
+                               
+                            } else {
+                                console.log("Немає адреси");
+                            }
+                        });
+                        calculateRoute(point, data, function (err, info) {
+                            if (!err) {
+                                console.log(info);
+                                $(".delivery-time span").text(info.duration.text);
+                            } else {
+                                console.log("Немає адреси");
+                            }
+                        });
+                    } else {
+                        console.log("Немає адреси");
+                    }
+                })
+        }
         var $input =  $("#address-input");
-        // $input.change( function(){
-        //     console.log($input.val())})
-
-        $input.change( function(){
-            geocodeAddress($input.val(), function (err, data) {
-                if (!err) {
-                    geocodeLatLng(data, function (err, adress) {
-                        if (!err) {
-                            console.log(adress);
-                            $(".delivery-address span").text(adress);
-                        } else {
-                            console.log("Немає адреси");
-                        }
-                    });
-                    calculateRoute(point, data, function (err, info) {
-                        if (!err) {
-                            console.log(info);
-                            $(".delivery-time span").text(info.duration.text);
-                        } else {
-                            console.log("Немає адреси");
-                        }
-                    });
-                } else {
-                    console.log("Немає адреси");
-                }
-            })
-        });
-        // $input.keypress(test);
-        // $input.on("input", test);
-
+        $input.change(findAdress);
 }
 
 //Коли сторінка завантажилась
 google.maps.event.addDomListener(window, 'load', initialize);
+exports.findAdress = findAdress;
