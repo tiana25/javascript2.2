@@ -114,6 +114,7 @@ function readInfo(){
     var nameInput = $("#name-input").val();
     var phoneInput = $("#phone-input").val();
     var liqPay = require('./LiqPay');
+    //var mapp = require('.../www/assets/js/map');
 
     var valid = !($(".f-wrap").hasClass("error"))&&nameInput!=null&&nameInput!=""&&phoneInput!=null&&phoneInput!="";
 

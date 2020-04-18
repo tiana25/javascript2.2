@@ -6,7 +6,9 @@ function initialize() {
     };
     var html_element = document.getElementById("googleMap");
     var map = new google.maps.Map(html_element, mapProp);
-
+    var directionsService = new google.maps.DirectionsService();
+    var directionsRenderer = new google.maps.DirectionsRenderer();
+    directionsRenderer.setMap(map);
     //Карта створена і показана
 
     var point = new google.maps.LatLng(50.464379, 30.519131);
@@ -64,6 +66,7 @@ function initialize() {
                 callback(null,	{
                 duration:	leg.duration
                 });
+                directionsRenderer.setDirections(response);
             }	else	{
                 callback(new Error("Cannot	find direction"));
             }
@@ -124,4 +127,3 @@ function initialize() {
 
 //Коли сторінка завантажилась
 google.maps.event.addDomListener(window, 'load', initialize);
-exports.findAdress = findAdress;

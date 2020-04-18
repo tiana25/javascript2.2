@@ -2,9 +2,8 @@ function readInfo(){
     var nameInput = $("#name-input").val();
     var phoneInput = $("#phone-input").val();
     var liqPay = require('./LiqPay');
-    var mapp = require('.../www/assets/js/map');
+    //var mapp = require('.../www/assets/js/map');
 
-    mapp.findAdress();
     var valid = !($(".f-wrap").hasClass("error"))&&nameInput!=null&&nameInput!=""&&phoneInput!=null&&phoneInput!="";
 
     if(valid){
